@@ -11,6 +11,9 @@
     --content-bg-clr: #f4f4f4;
     --txt-clr-1: #1f1f1f;
     --txt-clr-2: #605dae;
+    --txt-clr-3: #8989d3;
+    --input-unfocused-clr: #bababa;
+    --input-focused-clr: #605dae;
 }
 
 html{
@@ -29,7 +32,7 @@ body{
 
 #content{
     flex: 1;
-    width: max(70%, 250px);
+    width: max(75%, 270px);
     background-color: var(--content-bg-clr);
     border-radius: 0.8rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -88,6 +91,115 @@ body{
     width: 100%;
     background-color: var(--txt-clr-2);
     border-radius: 10px;
+}
+
+.add-tasks-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-tasks-container .add-tasks{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 2rem;
+}
+
+.add-tasks-container .add-tasks:hover{
+    transition: 0.2s ease;
+    cursor: pointer;
+    background-color: var(--txt-clr-2);
+}
+
+.add-tasks-container .add-tasks:hover::before,.add-tasks-container .add-tasks:hover::after{
+    color: var(--bg-clr);
+}
+
+.add-tasks-container .add-tasks::before{
+    content: '\2b';
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--txt-clr-2);
+}
+
+.add-tasks-container .add-tasks::after{
+    content: 'Add Task';
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--txt-clr-2);
+}
+
+.modal{
+    width: max(25%, 230px);
+    position: absolute;
+    flex-direction: column;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 0.25rem;
+    top: 20%;
+    margin: 0 auto;
+    gap: 4px;
+}
+
+.modal > .title-txt{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--txt-clr-1);
+}
+
+.modal > .title-input{
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--txt-clr-2);
+    margin: 4px 0;
+    border-bottom: 2px solid var(--input-unfocused-clr);
+}
+.modal > .title-input:focus{
+    border-bottom: 2px solid var(--input-focused-clr);
+}
+
+.modal > .due-date{
+    font-size: 1.1rem;
+    margin: 4px 0;
+    font-weight: 500;
+    color: var(--txt-clr-1);
+}
+
+.modal > .due-date-picker{
+    padding: 4px;
+    border: 2px solid var(--txt-clr-2);
+}
+
+.modal > .close-modal{
+    font-size: 1rem;
+    border: none;
+    padding: 8px;
+    background-color: #e8e8e8;
+    color: var(--txt-clr-1);
+    margin-top: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.modal > .submit-modal{
+    font-size: 1rem;
+    border: none;
+    padding: 8px;
+    background-color: var(--bg-clr);
+    color: var(--txt-clr-2);
+    margin-top: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.25rem;
+
 }
 
 @media(max-width: 600px){
