@@ -202,6 +202,67 @@ body{
 
 }
 
+.task-container{
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.task-container .task-card{
+    width: max(75%, 230px);
+    background-color: var(--content-bg-clr);
+    padding: 16px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 0.25rem;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.task-container .task-card .task-tick::before{
+    content: '\f00d';
+    font-family: 'Font Awesome 5 Free';
+    color: var(--txt-clr-2);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.task-container .task-card .task-edit::before{
+    content: '\f304';
+    font-family: 'Font Awesome 5 Free';
+    color: var(--txt-clr-2);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.task-container .task-card .content-container{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-container .task-card .content-container .task-title{
+    width: 80%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--txt-clr-2);
+}
+
+.task-container .task-card .content-container .task-due-date{
+    font-size: 0.9rem;
+    color: var(--txt-clr-1);
+    font-weight: 400;
+}
+
+@media(max-width: 800px){
+    .task-container .task-card .content-container{
+        width: 75%;
+    }
+}
+
 @media(max-width: 600px){
     .navbar{
         display: flex;
@@ -226,5 +287,14 @@ body{
     .navbar > .nav-links.active{
         display: flex;
         
+    }
+
+    .task-container .task-card .content-container .task-due-date{
+        font-size: 0.8rem;
+    }
+
+    .task-container .task-card .content-container .task-title{
+        font-size: 1rem;
+        width: 75%;
     }
 }
