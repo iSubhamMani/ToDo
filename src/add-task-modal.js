@@ -50,11 +50,10 @@ function resetModal(){
     const titleInput = document.querySelector('.title-input');
     titleInput.value = '';
     const dueDateInput = document.querySelector('.due-date-picker');
-    console.log(dueDateInput.value);
     dueDateInput.value = '';
 }
 
-function closeModal(){
+export function closeModal(){
     const modal = document.querySelector('.modal');
     modal.style.display = 'none';
     resetModal();
