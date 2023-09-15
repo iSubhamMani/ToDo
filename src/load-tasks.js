@@ -34,9 +34,9 @@ function addCardToDOM(task, key){
     contentContainer.appendChild(taskTitle);
     contentContainer.appendChild(taskDueDate);
 
-    taskCard.appendChild(taskEdit);
-    taskCard.appendChild(contentContainer);
     taskCard.appendChild(taskTick);
+    taskCard.appendChild(contentContainer);
+    taskCard.appendChild(taskEdit);
 
     return taskCard;
 }
