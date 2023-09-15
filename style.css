@@ -223,7 +223,15 @@ body{
 }
 
 .task-container .task-card .task-tick::before{
-    content: '\f00d';
+    content: '\f0c8';
+    font-family: 'Font Awesome 5 Free';
+    color: var(--txt-clr-2);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.task-container .task-card .task-tick.active::before{
+    content: '\f14a';
     font-family: 'Font Awesome 5 Free';
     color: var(--txt-clr-2);
     font-weight: 900;
