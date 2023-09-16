@@ -6,7 +6,14 @@ export default function createNav(){
     brandTitle.textContent = 'To Do';
     brandTitle.classList.add('brand-title');
 
+    const refreshBtn = document.createElement('span');
+    refreshBtn.classList.add('refresh-btn');
+    refreshBtn.addEventListener('click', () => {
+        location.reload();
+    })
+
     navbar.appendChild(brandTitle);
+    navbar.appendChild(refreshBtn);
 
     return navbar;
 }
