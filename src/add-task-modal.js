@@ -1,4 +1,4 @@
-export default function createModal(){
+export default function createAddTaskModal(){
     const modal = document.createElement('dialog');
     modal.classList.add('modal');
     
@@ -38,7 +38,7 @@ export default function createModal(){
     return modal;
 }
 
-export function loadModal(){
+export function loadAddModal(){
     const addTasksBtn = document.querySelector('.add-tasks');
 
     addTasksBtn.addEventListener('click', () => {
@@ -60,7 +60,7 @@ export function closeModal(){
     modal.close();
 }
 
-function displayModal(){
+export function displayModal(){
     const modal = document.querySelector('.modal');
     modal.style.display = 'flex';
     modal.showModal();
