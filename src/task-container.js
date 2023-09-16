@@ -1,6 +1,7 @@
 import { addTaskToDOM } from "./add-tasks-ui";
 import { closeModal } from "./add-task-modal";
 import deleteTask from "./delete-task";
+import editTask from "./edit-task";
 
 export default function createTaskContainer(){
     const taskContainer = document.createElement('div');
@@ -10,6 +11,7 @@ export default function createTaskContainer(){
     addTaskBtn.addEventListener('click', () => {
         taskContainer.appendChild(addTaskToDOM());
         deleteTask();
+        editTask();
         closeModal();
     })
 
