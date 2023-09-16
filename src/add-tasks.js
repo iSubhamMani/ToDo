@@ -1,5 +1,6 @@
 import generateKey from "./randomKey";
 import addTaskToDB from "./add-task-to-db";
+import Task from "./Task";
 
 export default function getKey(){
     const taskTitle = document.querySelector('.title-input').value;
@@ -12,8 +13,4 @@ export default function getKey(){
 
         return key;
     }
-}
-
-const Task = (title, dueDate) => {
-    return {title, dueDate};
 }
