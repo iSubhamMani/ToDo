@@ -53,6 +53,15 @@ body{
     color: var(--txt-clr-2);
 }
 
+.navbar > .refresh-btn::before{
+    content: '\f2f9';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--txt-clr-2);
+}
+
 .add-tasks-container{
     display: flex;
     justify-content: center;
