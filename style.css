@@ -53,46 +53,6 @@ body{
     color: var(--txt-clr-2);
 }
 
-.navbar > .nav-links{
-    display: flex;
-}
-
-.navbar > .nav-links > ul{
-    display: flex;
-    list-style-type: none;
-    gap: 16px;
-}
-
-.navbar > .nav-links .nav-link{
-    font-size: 1.1rem;
-    color: var(--txt-clr-1);
-    font-weight: 500;
-}
-
-.navbar > .nav-links .nav-link:hover{
-    cursor: pointer;
-    transition: 0.2s ease;
-    color: var(--txt-clr-2);
-}
-
-.navbar > .toggle-btn{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-btn .bar {
-    height: 3px;
-    width: 100%;
-    background-color: var(--txt-clr-2);
-    border-radius: 10px;
-}
-
 .add-tasks-container{
     display: flex;
     justify-content: center;
@@ -202,6 +162,77 @@ body{
 
 }
 
+/*Edit modal*/
+.edit-modal{
+    width: max(25%, 230px);
+    position: absolute;
+    flex-direction: column;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 0.25rem;
+    top: 20%;
+    margin: 0 auto;
+    gap: 4px;
+}
+
+.edit-modal > .title-txt{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--txt-clr-1);
+}
+
+.edit-modal > .title-input-edit{
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--txt-clr-2);
+    margin: 4px 0;
+    border-bottom: 2px solid var(--input-unfocused-clr);
+}
+
+.edit-modal > .title-input-edit:focus{
+    border-bottom: 2px solid var(--input-focused-clr);
+}
+
+.edit-modal > .due-date{
+    font-size: 1.1rem;
+    margin: 4px 0;
+    font-weight: 500;
+    color: var(--txt-clr-1);
+}
+
+.edit-modal > .due-date-picker-edit{
+    padding: 4px;
+    border: 2px solid var(--txt-clr-2);
+}
+
+.edit-modal > .close-modal{
+    font-size: 1rem;
+    border: none;
+    padding: 8px;
+    background-color: #e8e8e8;
+    color: var(--txt-clr-1);
+    margin-top: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.edit-modal > .update-modal{
+    font-size: 1rem;
+    border: none;
+    padding: 8px;
+    background-color: var(--bg-clr);
+    color: var(--txt-clr-2);
+    margin-top: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.25rem;
+
+}
+
 .task-container{
     padding: 16px 20px;
     display: flex;
@@ -217,9 +248,9 @@ body{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     border-radius: 0.25rem;
     display: flex;
-    gap: 8px;
+    gap: 12px;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items:center;
 }
 
 .task-container .task-card .task-tick::before{
@@ -228,6 +259,12 @@ body{
     color: var(--txt-clr-2);
     font-weight: 500;
     cursor: pointer;
+    font-size: 1rem;
+}
+
+.task-container .task-card .task-tick:hover:before{
+    color: var(--txt-clr-3);
+    transition: 0.2s ease;
 }
 
 .task-container .task-card .task-tick.active::before{
@@ -236,6 +273,7 @@ body{
     color: var(--txt-clr-2);
     font-weight: 900;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .task-container .task-card .task-edit::before{
@@ -272,31 +310,6 @@ body{
 }
 
 @media(max-width: 600px){
-    .navbar{
-        display: flex;
-        gap: 8px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar > .toggle-btn{
-        display: flex;
-    }
-    .navbar > .nav-links{
-        display: none;  
-        width: 100%;
-    }
-
-    .navbar > .nav-links ul{
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-    .navbar > .nav-links.active{
-        display: flex;
-        
-    }
-
     .task-container .task-card .content-container .task-due-date{
         font-size: 0.8rem;
     }
